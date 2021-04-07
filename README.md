@@ -5,7 +5,6 @@
 | nickname           | string | null: false  |
 | email              | string | unique: true |
 | encrypted_password | string | null: false  |
-| name               | string | null: false  |
 | birthday           | date   | null: false  |
 | first_name         | string | null: false  |
 | last_name          | string | null: false  |
@@ -24,9 +23,10 @@
 | ------------- | ---------- | ------------------------------ |
 | items_name    | text       | null: false                    |
 | description   | text       | null: false                    |
-| price         | string     | null: false                    |
+| price         | integer    | null: false                    |
 | category      | integer    | null: false                    |
 | status        | integer    | null: false                    |
+| area          | integer    | null: false                    |
 | shipping_cost | integer    | null: false                    |
 | shipping_time | integer    | null: false                    |
 | user          | references | null: false, foreign_key: true |
@@ -61,7 +61,7 @@
 | city          | string      | null: false                    |
 | address       | string      | null: false                    |
 | building_name | string      |                                |
-| phone_number  | string      | null: false                    |
+| phone_number  | integer     | null: false                    |
 | purchase      | references  | null: false, foreign_key: true |
 
 
