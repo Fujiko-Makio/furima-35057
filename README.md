@@ -20,12 +20,14 @@
 
 ## items テーブル
 
-| Column     | Type   | Options     |
-| ---------- | ------ | ----------- |
-| name       | string | null: false |
-| price      | string | null: false |
-| status     | string | null: false |
-| category   | string | null: false |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| items_name   | text       | null: false                    |
+| description  | text       | null: false                    |
+| price        | string     | null: false                    |
+| category     | integer    | null: false                    |
+| status       | integer    | null: false                    |
+| user         | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -50,15 +52,15 @@
 
 ## shippings テーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| post_code     | string     | null: false                    |
-| area          | string     | null: false                    |
-| city          | string     | null: false                    |
-| address       | string     | null: false                    |
-| building_name | string     | null: false                    |
-| phone_number  | string     | null: false                    |
-| purchase      | references | null: false, foreign_key: true |
+| Column        | Type        | Options                        |
+| ------------- | ----------- | ------------------------------ |
+| post_code     | string      | null: false                    |
+| area          | integer     | null: false                    |
+| city          | string      | null: false                    |
+| address       | string      | null: false                    |
+| building_name | string      | null: false                    |
+| phone_number  | string      | null: false                    |
+| purchase      | references  | null: false, foreign_key: true |
 
 
 ### Association
