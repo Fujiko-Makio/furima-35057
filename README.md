@@ -29,7 +29,6 @@
 
 ### Association
 
-- has_one :shipping
 - has_one :purchase
 - belongs_to :user
 
@@ -38,7 +37,6 @@
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| total_amount | string     | null: false                    |
 | user         | references | null: false, foreign_key: true |
 | item         | references | null: false, foreign_key: true |
 
