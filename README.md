@@ -2,7 +2,6 @@
 
 | Column          | Type   | Options     |
 | ----------------| ------ | ----------- |
-| id              | string | null: false |
 | nickname        | string | null: false |
 | email           | string | null: false |
 | password        | string | null: false |
