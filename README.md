@@ -29,8 +29,8 @@
 
 ### Association
 
-- has_one :shippings
-- has_one :purchases
+- has_one :shipping
+- has_one :purchase
 - belongs_to :user
 
 
