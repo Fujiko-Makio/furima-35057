@@ -111,11 +111,6 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name Full-width characters")
       end
-      it '苗字か名前片方だけでは登録できない' do
-        @user.last_name = ''
-        @user.valid?
-        expect(@user.errors.full_messages).to include("Last name can't be blank")
-      end
       it '苗字(カナ)が空では登録できない' do
         @user.first_name_kana = ''
         @user.valid?
