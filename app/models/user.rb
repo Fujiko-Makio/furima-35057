@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   validates :password, format: { with: VALID_PASSWORD_REGEX }
   validates :birthday, presence: true
-  with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々]/, message: "Full-width characters" } do
+  with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: "Full-width characters" } do
     validates :first_name
     validates :last_name
   end
