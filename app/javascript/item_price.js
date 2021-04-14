@@ -8,8 +8,5 @@ window.addEventListener('load', function(){
     addTaxDom.innerHTML = tax
     const addProfit = document.getElementById("profit")
     addProfit.innerHTML = profit
-
-    //const addTaxDom = document.getElementById("profit");
-    //addTaxDom.innerHTML = "入力した金額をもとに販売手数料を計算する処理"
   })
 })
