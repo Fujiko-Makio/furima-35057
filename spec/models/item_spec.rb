@@ -90,10 +90,31 @@ RSpec.describe Item, type: :model do
       end
 
       it '販売価格は全角数字では保存できない' do
-        @item.price = ４４４４４
+        @item.price = "４４４４４"
         @item.valid?
-        expect(@item.errors.full_messages).to include("")
+        expect(@item.errors.full_messages).to include("Price Out of setting range")
       end
+
+      it '商品価格が半角英数字混合では出品できない' do
+        @item.price = "3n3mn3j3k"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price Out of setting range")
+      end
+
+      it '商品価格が半角英字のみでは出品できない' do
+        @item.price = "sssssssss"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price Out of setting range")
+      end
+
+      it '商品価格が全角文字では出品できない' do
+        @item.price = "っっっっっっ３３３"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price Out of setting range")
+      end
+
+      
+
     end
 
 
