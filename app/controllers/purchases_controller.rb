@@ -10,14 +10,14 @@ class PurchasesController < ApplicationController
       @purchase.save
       return redirect_to root_path
     else
-      render 'index'
+      render :index
     end
   end
 
   private
 
   def purchase_params
-    params.require(:purchase).permit(:id)
+    params.require(:purchase).permit(:item_id)
   end
 
 end
