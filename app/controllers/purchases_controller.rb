@@ -4,6 +4,9 @@ class PurchasesController < ApplicationController
     @purchase = Item.find(params[:item_id])
   end
 
+  def new
+  end
+
   def create
     @purchase_shipping = PurchaseShippimgs.new(purchase_params)
     if @purchase_shipping.valid?
