@@ -5,19 +5,19 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    @purchase = Purchase.new(purchase_params)
-    if @purchase.valid?
-      @purchase.save
+    @purchase_shipping = PurchaseShippimgs.new(purchase_params)
+    if @purchase_shipping.valid?
+      @purchase_shipping.save
       return redirect_to root_path
     else
-      render :index
+      render :new
     end
   end
 
   private
 
   def purchase_params
-    params.require(:purchase).permit(:item_id)
+    params.require(:purchase_shippings).permit(:item_id, :post_code, :area_id, :city, :building_name, :phone_number)
   end
 
 end
