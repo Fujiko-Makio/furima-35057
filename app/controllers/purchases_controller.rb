@@ -7,7 +7,6 @@ class PurchasesController < ApplicationController
 
 
   def create
-    #binding.pry
     @purchase_shipping = PurchaseShipping.new(purchase_params)
     if @purchase_shipping.valid?
       @purchase_shipping.save
@@ -21,7 +20,7 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase_shipping).permit(:post_code, :area_id, :city, :address, :building_name, :phone_number).merge(user_id: current_user.id)
+    params.require(:purchase_shipping).permit(:post_code, :area_id, :city, :address, :building_name, :phone_number).merge(user_id: current_user.id, item_id: params[:item_id])
   end
 
 end
