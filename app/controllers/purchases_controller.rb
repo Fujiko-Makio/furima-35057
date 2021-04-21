@@ -1,6 +1,7 @@
 class PurchasesController < ApplicationController
-  before_action :authenticate_user!, except: :index
-  before_action :set_purchase, only: [:index, :create, :show]
+  before_action :authenticate_user!
+  before_action :set_purchase, only: [:index, :create]
+  before_action :move_to_index
 
   def index
     @purchase_shipping = PurchaseShipping.new
@@ -18,8 +19,7 @@ class PurchasesController < ApplicationController
     end
   end
 
-  def show
-  end
+
 
   private
 
@@ -38,6 +38,12 @@ class PurchasesController < ApplicationController
       card: purchase_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def move_to_index
+    if @purchase.purchase.present?
+      redirect_to root_path 
+    end
   end
 
 end
