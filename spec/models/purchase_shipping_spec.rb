@@ -11,6 +11,11 @@ RSpec.describe PurchaseShipping, type: :model do
     it '全ての情報が正しく入力できていれば購入できる' do
     expect(@purchase_shipping).to be_valid
     end
+
+    it '建物名が空でも登録できる' do
+      @purchase_shipping.building_name = ''
+      expect(@purchase_shipping).to be_valid
+    end
   end
 
   context '商品の購入ができない時' do
