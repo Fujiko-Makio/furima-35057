@@ -7,7 +7,7 @@ class PurchaseShipping
     validates :area_id, numericality: { other_than: 1 }
     validates :city
     validates :address
-    validates :phone_number, format: { with: /\A\d{11}\z/, message: 'Half-width number'}
+    validates :phone_number, format: { with: /\A\d{11}\z/ }
     validates :token
     validates :user_id
     validates :item_id

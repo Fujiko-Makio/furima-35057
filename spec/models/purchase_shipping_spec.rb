@@ -59,13 +59,19 @@ RSpec.describe PurchaseShipping, type: :model do
     it 'phone_numberが全角数字では購入できない' do
       @purchase_shipping.phone_number = "８８８８８８８８８８８"
       @purchase_shipping.valid?
-      expect(@purchase_shipping.errors.full_messages).to include("Phone number Half-width number")
+      expect(@purchase_shipping.errors.full_messages).to include("Phone number is invalid")
     end
 
     it 'phone_numberが半角数字以外では購入できない' do
       @purchase_shipping.phone_number = "あ１ffdydh"
       @purchase_shipping.valid?
-      expect(@purchase_shipping.errors.full_messages).to include("Phone number Half-width number")
+      expect(@purchase_shipping.errors.full_messages).to include("Phone number is invalid")
+    end
+
+    it 'phone_numberが12桁以上では購入できない' do
+      @purchase_shipping.phone_number = "1231234123412344"
+      @purchase_shipping.valid?
+      expect(@purchase_shipping.errors.full_messages).to include("Phone number is invalid")
     end
 
     it 'tokenが空では購入できない' do
@@ -74,6 +80,17 @@ RSpec.describe PurchaseShipping, type: :model do
       expect(@purchase_shipping.errors.full_messages).to include("Token can't be blank")
     end
 
+      it 'user_idが空では登録できない' do
+        @purchase_shipping.user_id = ""
+        @purchase_shipping.valid?
+        expect(@purchase_shipping.errors.full_messages).to include("User can't be blank")
+      end
+
+      it 'item_idが空では登録できない' do
+        @purchase_shipping.item_id = ""
+        @purchase_shipping.valid?
+        expect(@purchase_shipping.errors.full_messages).to include("Item can't be blank")
+      end
 
   end
 
