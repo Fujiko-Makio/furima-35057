@@ -41,7 +41,7 @@ class PurchasesController < ApplicationController
   end
 
   def move_to_index
-    if @purchase.purchase.present?
+    if @purchase.purchase.present? or current_user == @purchase.user
       redirect_to root_path 
     end
   end
