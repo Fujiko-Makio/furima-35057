@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe PurchaseShipping, type: :model do
   before do
     item = FactoryBot.create(:item)
-    @purchase_shipping = FactoryBot.build(:purchase_shipping, item_id: item.id)
+    user = FactoryBot.create(:user)
+    @purchase_shipping = FactoryBot.build(:purchase_shipping, item_id: item.id, user_id: user.id)
   end
 
   context '商品の購入ができる時' do
