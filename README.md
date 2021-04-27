@@ -15,6 +15,7 @@
 
 - has_many :items
 - has_many :purchases
+- has_many :messages
 
 
 ## items テーブル
@@ -35,6 +36,7 @@
 
 - has_one :purchase
 - belongs_to :user
+- has_many :messages
 
 
 ## purchases テーブル
@@ -68,3 +70,17 @@
 ### Association
 
 - belongs_to :purchase
+
+
+## messages テーブル
+
+| Column        | Type        | Options                        |
+| ------------- | ----------- | ------------------------------ |
+| text          | text        | null: false                    |
+| item          | references  | null: false, foreign_key: true |
+| user          | references  | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :item
+- belongs_to :user

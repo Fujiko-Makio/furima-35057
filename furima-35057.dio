@@ -1,12 +1,20 @@
 <mxfile>
     <diagram id="aluqRaa91O9MfqRpAosv" name="ページ1">
-        <mxGraphModel dx="1074" dy="293" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="878" dy="392" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.005;entryY=0.091;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=ERmany;endFill=0;startArrow=ERone;startFill=0;exitX=1.004;exitY=0.346;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="62" target="68" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="480" y="56" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="113" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;" edge="1" parent="1" source="58" target="107">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="140" y="380" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="150" y="400"/>
+                        </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="58" value="Users テーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
@@ -84,7 +92,7 @@
                     <mxGeometry y="56" width="220" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="80" value="Shippings テーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
-                    <mxGeometry x="580" y="340" width="240" height="236" as="geometry"/>
+                    <mxGeometry x="340" y="410" width="240" height="236" as="geometry"/>
                 </mxCell>
                 <mxCell id="81" value="post_code (integer型, NOT NULL)&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="80" vertex="1">
                     <mxGeometry y="26" width="240" height="30" as="geometry"/>
@@ -112,13 +120,29 @@
                         <mxPoint x="316.9200000000001" y="285" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;" parent="1" target="79" edge="1">
+                <mxCell id="90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;" parent="1" target="79" edge="1" source="80">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="400" y="431"/>
+                            <mxPoint x="470" y="370"/>
+                            <mxPoint x="430" y="370"/>
                         </Array>
-                        <mxPoint x="580" y="431" as="sourcePoint"/>
+                        <mxPoint x="560" y="370" as="sourcePoint"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="112" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.458;entryY=1.047;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=ERone;endFill=0;startArrow=ERmany;startFill=0;" edge="1" parent="1" source="107" target="101">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="107" value="Messages テーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="380" width="160" height="116" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="text (text型, NOT NULL)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="107">
+                    <mxGeometry y="26" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="110" value="item (references型)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="107">
+                    <mxGeometry y="56" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" value="user (references型)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="107">
+                    <mxGeometry y="86" width="160" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
