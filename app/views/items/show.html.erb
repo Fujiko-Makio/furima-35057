@@ -74,7 +74,7 @@
     </div>
   </div>
   <%# /商品の概要 %>
-
+ <% if user_signed_in? %>
   <div class="comment-box">
     <%= form_with(model: [@item, @message], local: true) do |f| %>
       <%= f.text_area :text, placeholder: "コメントする", class:"comment-text" %>
@@ -85,7 +85,7 @@
       </p>
       <%= f.submit "コメントする", class:"comment-btn" %>
     <% end %>
-    <p>＜コメント一覧＞</p>
+    <p>＜ コメント一覧 ＞</p>
     <div id='message'>
       <% @messages.reverse_each do |message|  %>
         <p><%= "「#{message.text}」" %></p>
@@ -93,6 +93,7 @@
       <% end %>
     </div>
   </div>
+ <% end %>
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前の商品
