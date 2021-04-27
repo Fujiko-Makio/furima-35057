@@ -88,8 +88,7 @@
     <p>＜ コメント一覧 ＞</p>
     <div id='message'>
       <% @messages.reverse_each do |message|  %>
-        <p><%= "「#{message.text}」" %></p>
-        <p><%= "by (#{message.user.nickname})" %></p>
+        <p><%= message.text %></p>
       <% end %>
     </div>
   </div>
